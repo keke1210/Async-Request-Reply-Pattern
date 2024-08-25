@@ -27,7 +27,7 @@ async function submitRequest() {
             const retryAfter = parseInt(response.headers.get('Retry-After'), 10) * 1000;
 
             statusDiv.textContent = 'Request accepted. Checking status...';
-            setTimeout(() => checkResult(location), retryAfter);
+            setTimeout(() => checkResult(location, retryAfter), retryAfter);
         } else {
             throw new Error('Failed to submit request');
         }
@@ -37,7 +37,7 @@ async function submitRequest() {
     }
 }
 
-async function checkResult(location) {
+async function checkResult(location, retryAfter) {
     try {
         const response = await fetch(location, { redirect: 'follow' });
 
@@ -51,7 +51,7 @@ async function checkResult(location) {
             } else {
                 // Still processing
                 statusDiv.textContent = 'Still processing. Checking again...';
-                setTimeout(() => checkResult(location), 2000);
+                setTimeout(() => checkResult(location, retryAfter), retryAfter);
             }
         } else {
             throw new Error(`Unexpected response: ${response.status} ${response.statusText}`);
