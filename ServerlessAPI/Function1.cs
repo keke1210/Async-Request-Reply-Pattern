@@ -27,7 +27,7 @@ namespace ServerlessAPI
                 _logger.LogInformation("Processing Started");
                 _fakeDataStore.TryAdd(correlationId, Status.Processing);
 
-                await Task.Delay(5 * 1000); // Simulate a long-running task
+                await Task.Delay(20 * 1000); // Simulate a long-running task
 
                 _fakeDataStore[correlationId] = Status.Completed;
                 _logger.LogInformation("Processing Finished");
