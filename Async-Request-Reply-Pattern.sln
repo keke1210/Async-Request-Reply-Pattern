@@ -10,9 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{803CB3D7-B731-4ED8-9A4E-7C01D9460DD5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{292BF25D-5DC5-4A2D-8B77-174A064C936A}"
 	ProjectSection(SolutionItems) = preProject
-		index.html = index.html
+		UI\index.html = UI\index.html
+		UI\index.js = UI\index.js
 	EndProjectSection
 EndProject
 Global
