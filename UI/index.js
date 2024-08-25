@@ -61,5 +61,3 @@ async function checkResult(location) {
         isProcessing = false;
     }
 }
-
-// The getResult function is not used in this flow, so I've removed it.
